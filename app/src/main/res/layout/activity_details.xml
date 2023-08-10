@@ -6,4 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".data.ui.details.DetailsActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:padding="10dp"
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:id="@+id/profile_image"
+            android:src="@drawable/placeholder"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <TextView
+            android:id="@+id/profile_name"
+            style="@style/titleTextStyle"
+            android:layout_marginTop="10dp"
+            android:text="Profile Name" />
+
+        <TextView
+            android:id="@+id/species"
+            android:layout_marginTop="10dp"
+            style="@style/subTitleTextStyle"
+            android:text="@string/species" />
+
+        <TextView
+            android:id="@+id/gender"
+            style="@style/subTitleTextStyle"
+            android:text="@string/gender" />
+
+        <TextView
+            android:id="@+id/house"
+            style="@style/subTitleTextStyle"
+            android:text="@string/house" />
+
+        <TextView
+            android:id="@+id/dob"
+            style="@style/subTitleTextStyle"
+            android:text="@string/date_of_birth" />
+
+        <TextView
+            android:id="@+id/actor"
+            style="@style/subTitleTextStyle"
+            android:text="@string/actor" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

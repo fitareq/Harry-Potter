@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Harry Potter</string>
+    <string name="date_of_birth">Date of birth: %1$s</string>
+    <string name="species">species: %1$s</string>
+    <string name="house">House: %1$s</string>
+    <string name="gender">Gender: %1$s</string>
+    <string name="actor">Actor: %1$s</string>
 </resources>

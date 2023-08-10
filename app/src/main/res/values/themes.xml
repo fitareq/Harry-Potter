@@ -6,4 +6,17 @@
     </style>
 
     <style name="Theme.HarryPotter" parent="Base.Theme.HarryPotter" />
+
+    <style name="titleTextStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/title_text_color</item>
+    </style>
+
+    <style name="subTitleTextStyle" parent="titleTextStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 </resources>

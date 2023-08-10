@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -49,32 +50,23 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: MainAdapter
     private fun loadAdapter(data: List<Character>) {
         adapter = MainAdapter(data) {
-            startActivity(Intent(this, DetailsActivity::class.java))
+            startActivity(Intent(this, DetailsActivity::class.java).putExtra("id", it.id))
         }
         binding.mainRv.adapter = adapter
     }
 
-    private var dialog: Dialog? = null
-    fun showLoadingScreen() {
-        if (dialog == null) {
-            dialog = Dialog(this)
-            dialog?.apply {
-                setContentView(ProgressBar(this@MainActivity))
-                window?.apply {
-                    setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                    setLayout(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                    )
-                }
-                setCancelable(false)
 
-            }
+    private fun showLoadingScreen() {
+        binding.apply {
+            progressBar.visibility = View.VISIBLE
+            mainRv.visibility = View.GONE
         }
-        dialog!!.show()
     }
 
-    fun hideLoadingScreen() {
-        dialog?.dismiss()
+    private fun hideLoadingScreen() {
+        binding.apply {
+            progressBar.visibility = View.GONE
+            mainRv.visibility = View.VISIBLE
+        }
     }
 }
